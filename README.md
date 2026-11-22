@@ -1,5 +1,10 @@
 ﻿# Sentiment Analysis App
 
+![Python](https://img.shields.io/badge/python-3.x-blue.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=Streamlit&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit_learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+
+
 [Python Version](https://www.python.org/)
 [Streamlit](https://streamlit.io/)
 [Scikit-Learn](https://scikit-learn.org/)

@@ -1,5 +1,17 @@
 import streamlit as st
 import joblib
+import re
+
+def clean_text(text):
+    if not isinstance(text, str):
+        return ""
+    # Lowercase
+    text = text.lower()
+    # Remove URLs
+    text = re.sub(r'http\S+', '', text)
+    # Remove special characters and numbers
+    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    return text
 
 # Load the model
 model = joblib.load('predictor.pkl')
@@ -13,8 +25,11 @@ user_text = st.text_area("Input Text")
 
 if st.button("Predict Sentiment", type="primary"):
     if user_text:
+        # Preprocess
+        cleaned_text = clean_text(user_text)
+        
         # Predict
-        prediction = model.predict([user_text])[0]
+        prediction = model.predict([cleaned_text])[0]
         
         # Display result
         st.subheader("Result:")
